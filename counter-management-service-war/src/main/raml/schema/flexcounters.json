@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Schema for FlexCounters",
+  "type": "object",
+  "properties": {
+    "flexCounterName": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "createdBy ": {
+      "type": "string"
+    },
+    "modified": {
+      "type": "integer"
+    },
+    "baseCounter": {
+      "baseCounterName": {
+        "type": "string"
+      },
+      "counterDescription": {
+        "type": "string"
+      },
+      "sourceObject": {
+        "type": "string"
+      },
+      "networkFunction": {
+        "type": "string"
+      },
+      "eventName": {
+        "type": "string"
+      }
+    },
+    "flexFilter": {
+      "flexFilterId": {
+        "type": "string"
+      },
+      "flexFilterInstances": [
+        {
+          "flexFilterInstanceName": {
+            "type": "string"
+          },
+          "value": [
+            {
+              "type": "string"
+            }
+          ],
+          "flexGroup": {
+            "flexGroupId": {
+              "type": "string"
+            },
+            "type": "enum",
+            "uniqueMembers": {
+              "type": "boolean"
+            },
+            "valueRangeConstraints": {
+              "minValue": {
+                "type": "integer"
+              },
+              "maxValue": {
+                "type": "integer"
+              }
+            },
+            "enumMembers": [
+              {
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              {
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "flexFilterInstanceName": {
+            "type": "string"
+          },
+          "flexGroup": {
+            "flexGroupId": {
+              "type": "string"
+            },
+            "type": "enum",
+            "uniqueMembers": {
+              "type": "boolean"
+            },
+            "valueRangeConstraints": {
+              "minValue": {
+                "type": "integer"
+              },
+              "maxValue": {
+                "type": "integer"
+              }
+            },
+            "enumMembers": [
+              {
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              {
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "value": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

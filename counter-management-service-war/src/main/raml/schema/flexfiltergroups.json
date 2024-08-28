@@ -1,0 +1,53 @@
+{
+   "version":"8.3.1",
+   "flexFilterGroups":[
+      {
+         "flexFilterName":"spId",
+         "description":"Description about the filter",
+         "type":"int64",
+         "valueRangeConstraints":{
+            "min":"0",
+            "max":"255"
+         }
+      },
+      {
+         "flexFilterName":"Pvi",
+         "description":"Description about the filter",
+         "type":"ENUM",
+         "enumMembers":{
+            "key1":"value1",
+            "key2":"value2",
+            "key3":"value3",
+            "key4":"value4"
+         }
+      }
+   ],
+   "events":[
+      {
+         "eventName":"INTERNAL_PER_UE_RB_TRAFFIC_REP",
+         "applicableFlexFilterGroups":[
+            {
+               "flexFilterName":"spId",
+               "eventparam":"EVENT_PARAM_SPID_VALUE"
+            },
+            {
+               "flexFilterName":"Pvi",
+               "eventparam":"EVENT_PARAM_ERAB_PVI"
+            }
+         ]
+      },
+      {
+         "eventName":"INTERNAL_PER_UE_LCG_TRAFFIC_REP",
+         "applicableFlexFilterGroups":[
+            {
+               "flexFilterName":"spId",
+               "eventparam":"EVENT_ARRAY_SPID_VALUE"
+            },
+            {
+               "flexFilterName":"Pvi",
+               "eventparam":"EVENT_ARRAY_ERAB_SETUP_REQ_PVI"
+            }
+         ]
+      }
+   ]
+}

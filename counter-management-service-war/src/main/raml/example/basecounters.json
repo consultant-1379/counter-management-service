@@ -1,0 +1,24 @@
+[
+   {
+      "baseCounterName":"pmAdvCellSupDetection",
+      "sourceObject":"EUtranCellFDD",
+      "description":"Description: The number of times Advanced Cell Supervision detected a \"sleeping cell\" condition.\n           Trigger: \"sleeping cell condition\" detected\n       ",
+      "scannerType":"PRIMARY",
+      "networkFunction":"",
+      "technologydomain":"",
+      "basedOnEvent":[
+         "//ERBS/INTERNAL_EVENT_ADV_CELL_SUP_DETECTION/*"
+      ]
+   },
+   {
+      "baseCounterName":"pmAdvCellSupRecoveryCellAtt",
+      "sourceObject":"EUtranCellFDD",
+      "description":" Description: The number of times Advanced Cell Supervision attempted a cell level recovery action due to a \"sleeping cell condition\".\n           Trigger: \"sleeping cell condition\" and cell level recovery attempt\n       ",
+      "scannerType":"PRIMARY",
+      "networkFunction":"",
+      "technologydomain":"",
+      "basedOnEvent":[
+         "//ERBS/INTERNAL_EVENT_ADV_CELL_SUP_RECOVERY_ATTEMPT/*"
+      ]
+   }
+]

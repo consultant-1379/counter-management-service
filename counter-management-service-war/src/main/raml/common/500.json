@@ -1,0 +1,5 @@
+     {
+        "title": "INTERNAL_SERVER_ERROR",
+        "description": "Service temporary unavailable",
+        "internal-error-code": "-1"
+      }

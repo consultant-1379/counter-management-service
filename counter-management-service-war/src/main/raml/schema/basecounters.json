@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Schema for BaseCounters",
+  "type": "object",
+  "properties": {
+    "counterName": {
+      "type": "string"
+    },
+    "sourceObject": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "scannerType": {
+      "type": "string"
+    },
+    "networkFunction": {
+      "type": "string"
+    },
+    "basedOnEvent": {
+      "type": "array"
+    }
+  }
+}

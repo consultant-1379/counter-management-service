@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="ebsm-flex-counter" transaction-type="JTA">
+        <description>Counter management JPA Persistence</description>
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:jboss/datasources/EbsmXaDatabase</jta-data-source>
+        <class>com.ericsson.oss.services.countermanagement.db.entities.FlexCounter</class>
+        <class>com.ericsson.oss.services.countermanagement.db.entities.FlexCounterDetail</class>
+        <properties>
+            <property name="hibernate.show_sql" value="false" />
+            <property name="jboss.as.jpa.providerModule" value="application" />
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+        </properties>
+    </persistence-unit>
+</persistence>

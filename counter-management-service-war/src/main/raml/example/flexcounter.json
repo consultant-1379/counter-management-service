@@ -1,0 +1,21 @@
+{
+   "flexCounterName":"pmFlexRwrFailNoEutranTarget_UeCat2-100UePwrClass0|1",
+   "status":"Published",
+   "flexFilterId":"UeCat2-100UePwrClass0|1",
+   "createdBy ":"administrator",
+   "modified":1559917413241,
+   "baseCounterName":"pmFlexRwrFailNoEutranTarget",
+   "eventName":"CuCpRwrMobilityDecision",
+   "flexFilterList":[
+      {
+         "filtername":"UeCat2",
+         "eventparam":"EVENT_PARAM_XXXX_VALUE",
+         "filtervalue":"2-100"
+      },
+      {
+         "filtername":"UePwrClass",
+         "eventparam":"EVENT_PARAM_XXXX_VALUE",
+         "filtervalue":"0|1"
+      }
+   ]
+}

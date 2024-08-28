@@ -1,0 +1,5 @@
+  {
+  "title": "BAD_REQUEST",
+  "description": "The request could not be understood by the server due to malformed syntax",
+  "internal-error-code": "-1"
+}

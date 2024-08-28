@@ -1,0 +1,43 @@
+[{
+      "flexCounterName":"pmFlexRwrFailNoEutranTarget_UeCat2-10UePwrClass0|9",
+      "status":"Published",
+      "flexFilterId":"UeCat2-100UePwrClass0|1",
+      "createdBy ":"administrator",
+      "modified":1559917413241,
+      "baseCounterName":"pmFlexRwrFailNoEutranTarget",
+      "eventName":"CuCpRwrMobilityDecision",
+      "flexFilterList":[
+         {
+            "filtername":"UeCat2",
+            "eventparam":"EVENT_PARAM_XXXX_VALUE",
+            "filtervalue":"2-10"
+         },
+         {
+            "filtername":"UePwrClass",
+            "eventparam":"EVENT_PARAM_XXXX_VALUE",
+            "filtervalue":"0|9"
+         }
+      ]
+   },
+   {
+      "flexCounterName":"pmFlexRwrFailPlmnNotAllowed_UeCat10|13|190UePwrClass0|5|9",
+      "status":"Published",
+      "flexFilterId":"UeCat10|13|19UePwrClass0|1|4",
+      "createdBy ":"administrator",
+      "modified":1559917413241,
+      "baseCounterName":"pmEbsRwrFailPlmnNotAllowed",
+      "eventName":"CuCpRwrMobilityDecision",
+      "flexFilterList":[
+         {
+            "filtername":"UeCat",
+            "eventparam":"EVENT_PARAM_XXXX_VALUE",
+            "filtervalue":"10|13|19"
+         },
+         {
+            "filtername":"UePwrClass",
+            "eventparam":"EVENT_PARAM_XXXX_VALUE",
+            "filtervalue":"0|5|9"
+         }
+      ]
+   }
+]

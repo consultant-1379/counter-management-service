@@ -1,0 +1,48 @@
+{
+"flexcounterList":
+[
+{
+  "flexCounterName": "pmFlexRwrFailNoEutranTarget_UeCat2-100UePwrClass0|1",
+  "status": "Published",
+  "createdBy ": "administrator",
+  "modified": 1559917413241,
+  "baseCounterName": "pmFlexRwrFailNoEutranTarget",
+  "eventName": "CuCpRwrMobilityDecision",
+  "flexFilterList" : [
+            {
+              "filtername": "UeCat2",
+              "eventparam": "EVENT_PARAM_XXXX_VALUE",
+              "filtervalue" : "2-100"
+            },
+            {
+              "filtername": "UePwrClass",
+              "eventparam": "EVENT_PARAM_XXXX_VALUE",
+              "filtervalue" : "0|1"
+            }
+
+          ]
+},
+{
+  "flexCounterName": "pmFlexRwrFailPlmnNotAllowed_UeCat100|103|190UePwrClass0|1|4",
+  "status": "Published",
+  "createdBy ": "administrator",
+  "modified": 1559917413241,
+  "baseCounterName": "pmEbsRwrFailPlmnNotAllowed",
+  "eventName": "CuCpRwrMobilityDecision",
+  "flexFilterList" : [
+            {
+              "filtername": "UeCat",
+              "eventparam": "EVENT_PARAM_XXXX_VALUE",
+              "filtervalue" : "100|103|190"
+            },
+            {
+              "filtername": "UePwrClass",
+              "eventparam": "EVENT_PARAM_XXXX_VALUE",
+              "filtervalue" : "0|1|4"
+            }
+
+          ]
+}
+]
+
+ }

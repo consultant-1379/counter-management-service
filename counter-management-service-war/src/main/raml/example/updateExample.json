@@ -1,0 +1,37 @@
+{
+"flexcounterList":
+[
+{
+  "flexCounterName": "pmFlexRwrFailNoEutranTarget_UeCat2-100UePwrClass0|1",
+  "status": "Published",
+  "createdBy ": "administrator",
+  "modified": 1559917413241,
+  "flexFilterList" : [
+            {
+
+              "filtervalue" : "2-10"
+            },
+            {
+              "filtervalue" : "0|9"
+            }
+
+          ]
+},
+{
+  "flexCounterName": "pmFlexRwrFailPlmnNotAllowed_UeCat100|103|190UePwrClass0|1|4",
+  "status": "Published",
+  "createdBy ": "administrator",
+  "modified": 1559917413241,
+  "flexFilterList" : [
+            {
+              "filtervalue" : "10|13|19"
+            },
+            {
+              "filtervalue" : "0|5|9"
+            }
+
+          ]
+}
+]
+
+ }

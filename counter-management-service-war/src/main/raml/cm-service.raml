@@ -1,0 +1,261 @@
+#%RAML 1.0
+type: Counter Management
+version: v1
+baseUri: http://{vm}:8080/counter-management/{version}
+protocols: [HTTP, HTTPS]
+schemas:
+      - basecounters: !include schema/basecounters.json
+      - flexcounters: !include schema/flexcounters.json
+      - flexfilter-groups-constraints: !include schema/flexfilter-groups-constraints.json
+      - flexfilter-groups-enum: !include schema/flexfilter-groups-enum.json
+/base-counters:
+  get:
+    description: Retrieve a List of BaseCounters from the model service.
+    queryParameters:
+      neType:
+        displayName: mim
+        type: string
+        description: netype, is the RadioNode type
+        example: /base-counters?neType=RadioNode
+        required:  true
+    responses:
+      200:
+        description: Successfully returned a list of bascounters.  Returned from model service pfm_measurment.
+        body:
+          application/json:
+            type: array
+            description: An array of Basecounters returned.
+            example:
+              !include example/basecounters.json
+      500:
+        description: Internal server error
+        body:
+          application/json:
+            !include common/500.json
+      403:
+        description: User has no right perform this action
+        body:
+          application/json:
+            !include common/403.json
+      400:
+        description: Invalid request
+        body:
+          application/json:
+            !include common/400.json
+      404:
+        description: Requested resource has not been found
+        body:
+          application/json:
+            !include common/404.json
+/flex-filters:
+  get:
+    description: Returned flex filter groups returned from FTEM.xml file which is placed in the model service.
+    responses:
+      200:
+        description: Successfully returned a flex-filter-group
+        body:
+          application/json:
+            type: object
+            example:
+              !include example/flexfiltergroups.json
+      500:
+        description: Internal server error
+        body:
+          application/json:
+            !include common/500.json
+      403:
+        description: User has no right perform this action
+        body:
+          application/json:
+            !include common/403.json
+      400:
+        description: Invalid request
+        body:
+          application/json:
+            !include common/400.json
+      404:
+        description: Requested resource has not been found
+        body:
+          application/json:
+            !include common/404.json
+/flex-counters:
+  /{flexcountername}:
+    get:
+      description: retrieve a single flexcounter by passing the given name.
+      responses:
+        200:
+          description: Successfully returned a flexcounter by name
+          body:
+            application/json:
+              type: object
+              example:
+                !include example/flexcounter.json
+        500:
+          description: Internal server error
+          body:
+            application/json:
+              !include common/500.json
+        403:
+          description: User has no right perform this action
+          body:
+            application/json:
+              !include common/403.json
+        400:
+          description: Invalid request
+          body:
+            application/json:
+              !include common/400.json
+        404:
+          description: Requested resource has not been found
+          body:
+            application/json:
+              !include common/404.json
+  get:
+    description: Return a list of flex-counters.
+    responses:
+      200:
+        description: successfully returned all flex-counters.
+        body:
+          application/json:
+            type: array
+            example:
+               !include example/flexcounters.json
+      500:
+        description: Internal server error
+        body:
+          application/json:
+            !include common/500.json
+      403:
+        description: User has no right perform this action
+        body:
+          application/json:
+            !include common/403.json
+      400:
+        description: Invalid request
+        body:
+          application/json:
+            !include common/400.json
+      404:
+        description: Requested resource has not been found
+        body:
+          application/json:
+            !include common/404.json
+  delete:
+    description: Delete flexcounters, passing an array for multiple delete
+    queryParameters:
+      flexCounterList:
+        displayName: flexCounterList
+        type: array
+        description: The identifier of the flexcounters to be deleted.
+        example: [pmFlexRwrFailNoEutranTarget_UeCat2-100UePwrClass0|1 , pmFlexRwrFailNoEutranTarget_UeCat3-100UePwrClass0|8]
+        required: true
+    responses:
+      200:
+        description: successfully deleted flexcounters
+        body:
+          application/json:
+            !include common/202.json
+      500:
+        description: Internal server error
+        body:
+          application/json:
+            !include common/500.json
+      403:
+        description: User has no right perform this action
+        body:
+          application/json:
+            !include common/403.json
+      400:
+        description: Invalid request
+        body:
+          application/json:
+            !include common/400.json
+      404:
+        description: Requested resource has not been found
+        body:
+          application/json:
+            !include common/404.json
+  put:
+    description: Update flexcounters, here we will change the filter value and the filter name. The filter name will change due to the filter changing.
+    body:
+      application/json:
+        properties:
+          flexCounterList:
+            type: object
+            description: A FlexCounterList is passed with the body of the request
+            example:
+              !include example/updateExample.json
+            required: true
+    responses:
+      200:
+        description: Successfully updated a flexcounter
+        body:
+          application/json:
+            type: array
+            example:
+              !include example/flexcounters.json
+      500:
+        description: Internal server error
+        body:
+          application/json:
+            !include common/500.json
+      403:
+        description: User has no right perform this action
+        body:
+          application/json:
+            !include common/403.json
+      400:
+        description: Invalid request
+        body:
+          application/json:
+            !include common/400.json
+      404:
+        description: Requested resource has not been found
+        body:
+          application/json:
+            !include common/404.json
+  post:
+    description: Create flexcounters
+    body:
+      application/json:
+        properties:
+          flexCounterList:
+            type: object
+            description: A FlexCounterList is passed with the body of the request
+            example:
+              !include example/flexCounterListArray.json
+            required: true
+    responses:
+      201:
+        description: Successfully created a flexcounter
+        body:
+          application/json:
+            type: array
+            example:
+              !include example/flexcounters.json
+      500:
+        description: Internal server error
+        body:
+          application/json:
+            !include common/500.json
+      403:
+        description: User has no right perform this action
+        body:
+          application/json:
+            !include common/403.json
+      400:
+        description: Invalid request
+        body:
+          application/json:
+            !include common/400.json
+      404:
+        description: Requested resource has not been found
+        body:
+          application/json:
+            !include common/404.json
+/exported-flex-counters:
+  get:
+    description: To be decided, exporting a xml/csv file
+/imported-flex-counters:
+  get:
+    description: To be decided, importing axml/csv file
